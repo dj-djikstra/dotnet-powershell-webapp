@@ -1,38 +1,48 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Management.Automation;
+using System.Diagnostics;
 
-namespace DotNetPowerShellApp.Pages
+namespace PowerShellWebApp.Pages
 {
     public class IndexModel : PageModel
     {
         [BindProperty]
-        public string Name { get; set; }
-
-        public string Output { get; set; }
-
-        public void OnGet()
-        {
-        }
+        public string UserInput { get; set; }
+        public string ScriptOutput { get; set; }
 
         public void OnPost()
         {
-            if (!string.IsNullOrEmpty(Name))
+            if (!string.IsNullOrEmpty(UserInput))
             {
-                using (PowerShell powerShell = PowerShell.Create())
+                ScriptOutput = RunPowerShellScript(UserInput);
+            }
+        }
+
+        private string RunPowerShellScript(string input)
+        {
+            string scriptPath = "scripts/run-mfa.ps1"; // Adjust the path as needed
+            ProcessStartInfo startInfo = new ProcessStartInfo()
+            {
+                FileName = "pwsh", // Use pwsh (PowerShell Core) which is supported in Azure App Service
+                Arguments = $"-NoProfile -ExecutionPolicy Bypass -File \"{scriptPath}\" \"{input}\"",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using (Process process = Process.Start(startInfo))
+            {
+                string output = process.StandardOutput.ReadToEnd();
+                string error = process.StandardError.ReadToEnd();
+                process.WaitForExit();
+
+                if (!string.IsNullOrEmpty(error))
                 {
-                    // Concatenate the user input with custom text
-                    string script = $"\"{Name} - has been entered successfully\"";
-
-                    // Execute the PowerShell script
-                    powerShell.AddScript(script);
-
-                    // Collect the results
-                    var results = powerShell.Invoke();
-
-                    // Build the output string
-                    Output = string.Join("\n", results.Select(r => r.ToString()));
+                    return $"Error: {error}";
                 }
+
+                return output;
             }
         }
     }

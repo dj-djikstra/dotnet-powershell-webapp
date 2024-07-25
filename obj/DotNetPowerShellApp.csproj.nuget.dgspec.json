@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tyler/Documents/Hanover/dotNet-MFA-App/DotNetPowerShellApp/DotNetPowerShellApp.csproj": {}
+    "/Users/tyler/Documents/Hanover/dotNet-MFA-App/dotnet-powershell-webapp/DotNetPowerShellApp.csproj": {}
   },
   "projects": {
-    "/Users/tyler/Documents/Hanover/dotNet-MFA-App/DotNetPowerShellApp/DotNetPowerShellApp.csproj": {
+    "/Users/tyler/Documents/Hanover/dotNet-MFA-App/dotnet-powershell-webapp/DotNetPowerShellApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tyler/Documents/Hanover/dotNet-MFA-App/DotNetPowerShellApp/DotNetPowerShellApp.csproj",
+        "projectUniqueName": "/Users/tyler/Documents/Hanover/dotNet-MFA-App/dotnet-powershell-webapp/DotNetPowerShellApp.csproj",
         "projectName": "DotNetPowerShellApp",
-        "projectPath": "/Users/tyler/Documents/Hanover/dotNet-MFA-App/DotNetPowerShellApp/DotNetPowerShellApp.csproj",
+        "projectPath": "/Users/tyler/Documents/Hanover/dotNet-MFA-App/dotnet-powershell-webapp/DotNetPowerShellApp.csproj",
         "packagesPath": "/Users/tyler/.nuget/packages/",
-        "outputPath": "/Users/tyler/Documents/Hanover/dotNet-MFA-App/DotNetPowerShellApp/obj/",
+        "outputPath": "/Users/tyler/Documents/Hanover/dotNet-MFA-App/dotnet-powershell-webapp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tyler/.nuget/NuGet/NuGet.Config"

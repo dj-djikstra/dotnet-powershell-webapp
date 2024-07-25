@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DotNetPowerShellApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bda0894cad54af602e832d94b7f71fff27f74aa5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DotNetPowerShellApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DotNetPowerShellApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
